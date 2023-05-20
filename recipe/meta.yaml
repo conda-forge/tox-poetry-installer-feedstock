@@ -1,5 +1,5 @@
 {% set name = "tox-poetry-installer" %}
-{% set version = "0.10.2" %}
+{% set version = "0.10.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 07e3d8cb63066b6c8d7cfa332534b9b78ac559ce8171374b6b9ec9cc2273b9ca
+  sha256: 58af36082293b87e3488184f46ccf6f288c52c90e802066f53d3209c0f1c6226
 
 build:
   noarch: python
@@ -16,16 +16,16 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.7,<4.0
     - poetry-core >=1.1.0
     - pip
   run:
-    - python >=3.7
-    - poetry-core >=1.1.0
+    - python >=3.7,<4.0
+    - poetry-core >=1.1.0,<2.0.0
     - tox >=3.8.0,<4.0.0
   run_constrained:
-    - cleo >=1.0.0
-    - poetry >=1.2.0
+    - cleo >=1.0,<3.0
+    - poetry >=1.2.0,<1.5.0
 test:
   imports:
     - tox_poetry_installer
