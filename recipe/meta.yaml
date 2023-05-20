@@ -16,16 +16,16 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.7,<4.0
     - poetry-core >=1.1.0
     - pip
   run:
-    - python >=3.7
-    - poetry-core >=1.1.0
+    - python >=3.7,<4.0
+    - poetry-core >=1.1.0,<2.0.0
     - tox >=3.8.0,<4.0.0
   run_constrained:
-    - cleo >=1.0.0
-    - poetry >=1.2.0
+    - cleo >=1.0,<3.0
+    - poetry >=1.2.0,<1.5.0
 test:
   imports:
     - tox_poetry_installer
